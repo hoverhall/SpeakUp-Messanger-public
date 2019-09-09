@@ -2,4 +2,11 @@ const p = {
     color: "#f3dd3d",
 }
 
-export default p;
+const content = {
+    backgroundColor: "#494949",
+    width: "50vh",
+    height: "100%",
+
+}
+
+export {p, content};
