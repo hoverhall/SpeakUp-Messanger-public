@@ -31,6 +31,17 @@ class MainContent extends Component {
             }
         }
 
+        function unixTimeToTime (unix) {
+            var date = new Date(unix*1000);
+            // Hours part from the timestamp
+            var hours = date.getHours();
+            // Minutes part from the timestamp
+            var minutes = "0" + date.getMinutes();
+
+            // Will display time in 10:30:23 format
+            return {time: hours + ':' + minutes.substr(-2)}
+        }
+
         
         return (
             <div className="main-content">
@@ -46,9 +57,40 @@ class MainContent extends Component {
                                             src={item.data.img}
                                             alt={item.data.fname}
                                         />
-                                        <span>{`${
-                                            item.data.fname
-                                        } ${item.data.lname}`}</span>
+                                        <div className="user-name-with-partly-visible-message-and-time">
+                                            <span>{`${item.data.fname} ${item.data.lname}`}</span>
+                                            {item.data.contacts.map((innerItem) => (
+                                                <>
+                                                {console.log(item.id, innerItem.id)}
+                                                <p className="partly-visible-message">
+                                                   {innerItem.messages[0].text}
+                                                </p>
+                                                <span>{unixTimeToTime(innerItem.messages[0].time).time}</span>
+                                                </>
+                                                
+                                            ))}
+                                        </div>
+                                    </Link>
+                            ))
+                        }
+                    </div>
+                    
+                )} />
+                <Route path="/find" exact render={() => (
+                    <div className="main-container">
+                        {
+                            this.props.db_user_snapshot.map((item, index) => (
+                                    <Link className="co-user" to={`/${item.id}`} key={index} className="co-user">
+                                        {console.log(item)}
+                                        <img
+                                            className="logoImg"
+                                            src={item.data.img}
+                                            alt={item.data.fname}
+                                        />
+                                        <div className="user-name-with-partly-visible-message-and-time">
+                                            <span>{`${item.data.fname} ${item.data.lname}`}</span>
+                                            <p className="partly-visible-message">{item.data.contacts}</p>
+                                        </div>
                                     </Link>
                             ))
                         }
