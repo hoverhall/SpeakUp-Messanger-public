@@ -7,11 +7,9 @@ import CompanionShirtInfo from './companionShirtInfo';
 
 export default () => {
     return (
-        <>
         <div className="top-bar">
-            {/* <MessJournal /> */}
             <CompanionShirtInfo />
+            <MessJournal />
         </div>
-        </>
     )
 }

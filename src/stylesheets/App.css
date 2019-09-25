@@ -30,9 +30,116 @@ body,
 header {
     height: 10%;
     background-color: #292929;
+    display: flex;
+    align-items: center;
 }
 
 main {
     height: 90%;
     display: flex;
+}
+
+.companion-shirt-info {
+    display: flex;
+}
+
+.companion-shirt-info * {
+    margin-left: 15px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.logoImg {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+}
+
+.topName {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #fff;
+}
+
+.top-bar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.back-btn, .find-btn, .btn {
+    background: #ffffff00;
+    border: 0;
+    color: rgb(177, 177, 177);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin-right: 15px;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    background: #383838;
+}
+
+.message-journal {
+    margin: auto 0 auto auto;
+}
+
+.input {
+    margin-top: 10px;
+    padding: 10px;
+    width: 90%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    background: #ffffff00;
+    border: 1px solid #232323;
+    border-radius: 2px;
+    color: #fff
+}
+
+.main-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#next {
+    visibility: hidden;
+}
+
+.go-btn {
+    font-family: 30px;
+    padding: 5px 15px;
+    border: 3px solid #313131;
+    border-radius: 5px;
+    margin: auto;
+}
+
+.main-container {
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.co-user {
+    margin: 10px 10px 0px 10px;
+    padding: 10px;
+    display: block;
+    background: #313131;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    border-radius: 10px;
 }
